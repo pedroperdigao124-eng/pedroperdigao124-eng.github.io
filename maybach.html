@@ -1,95 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Maybach | Luxury & Engineering</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Mercedes-Maybach | Ultimate Luxury</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background:#0b0b0b;
-            color:#f2f2f2;
-            line-height:1.7;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background:#0a0a0a;
+    color:#eaeaea;
+    line-height:1.8;
+}
 
-        nav {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            display: flex;
-            gap: 40px;
-            z-index: 10;
-        }
+/* NAV */
+nav {
+    position:fixed;
+    top:30px;
+    left:40px;
+    display:flex;
+    gap:40px;
+    z-index:100;
+}
 
-        nav a {
-            color:#fff;
-            text-decoration:none;
-            font-size:0.85rem;
-            letter-spacing:3px;
-            font-weight:500;
-        }
+nav a {
+    color:#fff;
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:3px;
+    font-weight:500;
+}
 
-        nav a:hover { opacity:0.6; }
+nav a:hover { opacity:0.6; }
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 160px 20px 100px;
-        }
+/* SECTIONS */
+section {
+    padding:140px 8%;
+}
 
-        h1 {
-            font-family:'Playfair Display', serif;
-            font-size:3rem;
-            margin-bottom:40px;
-        }
+.hero {
+    height:100vh;
+    background:url('images/maybachfront.png') center/cover fixed;
+    display:flex;
+    align-items:center;
+}
 
-        h2 {
-            font-family:'Playfair Display', serif;
-            margin:60px 0 20px;
-            font-size:1.8rem;
-        }
+.hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
 
-        p {
-            color:#ccc;
-            font-size:1.05rem;
-        }
+.hero-content {
+    position:relative;
+    max-width:700px;
+}
 
-        /* GALLERY */
-        .gallery {
-            display:grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-            gap:30px;
-            margin-top:40px;
-        }
+.hero h1 {
+    font-family:'Orbitron', sans-serif;
+    font-size:3.8rem;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
 
-        .card img {
-            width:100%;
-            border-radius:12px;
-        }
+.hero p {
+    color:#cfcfcf;
+    font-size:1.1rem;
+}
 
-        .card p {
-            margin-top:12px;
-            font-size:0.9rem;
-            color:#aaa;
-        }
+/* STORY */
+.story h2,
+.gallery-title,
+.specs h2 {
+    font-family:'Orbitron', sans-serif;
+    letter-spacing:4px;
+    font-size:2.2rem;
+    margin-bottom:30px;
+}
 
-        .specs {
-            margin-top:60px;
-            border-top:1px solid #222;
-            padding-top:30px;
-        }
+.story p {
+    max-width:800px;
+    font-size:1.1rem;
+    color:#ccc;
+}
 
-        .specs p {
-            font-size:0.95rem;
-            letter-spacing:1px;
-        }
-    </style>
+/* GALLERY */
+.gallery {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap:40px;
+}
+
+.card {
+    overflow:hidden;
+    border-radius:16px;
+}
+
+.card img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition: transform 0.8s ease;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+.card p {
+    margin-top:14px;
+    font-size:0.9rem;
+    color:#aaa;
+}
+
+/* PARALLAX BLOCK */
+.parallax {
+    height:70vh;
+    background:url('images/maybachinteriorrear.png') center/cover fixed;
+    display:flex;
+    align-items:center;
+}
+
+.parallax div {
+    background:rgba(0,0,0,0.6);
+    padding:60px;
+    max-width:600px;
+}
+
+.parallax h2 {
+    font-family:'Orbitron', sans-serif;
+    font-size:2rem;
+    letter-spacing:4px;
+}
+
+/* SPECS */
+.specs {
+    border-top:1px solid #222;
+}
+
+.spec-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.spec {
+    background:#111;
+    padding:30px;
+    border-radius:12px;
+}
+
+.spec h3 {
+    font-family:'Orbitron', sans-serif;
+    font-size:1rem;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.spec p {
+    color:#bbb;
+    font-size:0.95rem;
+}
+</style>
 </head>
+
 <body>
 
 <nav>
@@ -97,69 +177,105 @@
     <a href="maybach.html">MAYBACH</a>
 </nav>
 
-<main>
-    <h1>Mercedes-Maybach</h1>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>MAYBACH</h1>
+        <p>
+            This is not merely a vehicle.  
+            It is a statement of power, refinement and arrival.
+        </p>
+    </div>
+</section>
 
+<!-- STORY -->
+<section class="story">
+    <h2>THE EXPERIENCE</h2>
     <p>
-        Mercedes-Maybach represents the absolute pinnacle of modern automotive luxury.
-        Each vehicle is engineered to deliver unparalleled comfort, refined performance
-        and an unmistakable presence. Designed for those who demand excellence without
-        compromise, Maybach blends advanced technology with timeless elegance.
+        Owning a Mercedes-Maybach is a silent conversation with the world.
+        It speaks of success without shouting, of confidence without excess.
+        Every surface, every stitch and every movement has been engineered
+        to surround its occupants with absolute calm and authority.
+        This is luxury designed for those who no longer need to prove anything.
     </p>
+</section>
 
-    <h2>Design & Craftsmanship</h2>
+<!-- GALLERY -->
+<section>
+    <h2 class="gallery-title">DESIGN & CRAFTSMANSHIP</h2>
     <div class="gallery">
 
         <div class="card">
-            <img src="images/maybachfront.png" alt="Front view">
-            <p>Iconic front grille and commanding presence.</p>
+            <img src="images/maybachside.png">
+            <p>Extended proportions designed for presence and comfort.</p>
         </div>
 
         <div class="card">
-            <img src="images/maybachside.png" alt="Side profile">
-            <p>Elegant proportions and extended wheelbase for maximum comfort.</p>
+            <img src="images/maybachrear.png">
+            <p>A rear design that defines elegance and restraint.</p>
         </div>
 
         <div class="card">
-            <img src="images/maybachrear.png" alt="Rear view">
-            <p>Refined rear design with signature Maybach details.</p>
+            <img src="images/maybachinteriorfront.png">
+            <p>Driver-focused technology blended with handcrafted luxury.</p>
         </div>
 
         <div class="card">
-            <img src="images/maybachinteriorfront.png" alt="Interior front">
-            <p>Driver-focused cockpit with premium materials and digital technology.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/maybachinteriorrear.png" alt="Interior rear">
-            <p>Executive rear seating with massage, ventilation and recline functions.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/maybachtrunk.png" alt="Trunk">
-            <p>Spacious trunk engineered for long-distance luxury travel.</p>
+            <img src="images/maybachtrunk.png">
+            <p>Spacious storage, engineered for refined long-distance travel.</p>
         </div>
 
     </div>
+</section>
 
-    <h2>Performance & Specifications</h2>
-    <p>
-        Under the hood, Mercedes-Maybach models feature powerful V8 and V12 biturbo engines,
-        delivering smooth acceleration and near-silent cruising. Advanced suspension systems
-        and all-wheel drive ensure effortless driving comfort in all conditions.
-    </p>
-
-    <div class="specs">
-        <p><strong>0–100 km/h:</strong> approximately 4.4 seconds</p>
-        <p><strong>Top Speed:</strong> 250 km/h (electronically limited)</p>
-        <p><strong>Engines:</strong> 4.0L V8 Biturbo / 6.0L V12 Biturbo</p>
-        <p><strong>Transmission:</strong> 9-speed automatic</p>
-        <p><strong>Drive System:</strong> 4MATIC® All-Wheel Drive</p>
-        <p><strong>Focus:</strong> Ultimate luxury, comfort and refined performance</p>
+<!-- PARALLAX -->
+<section class="parallax">
+    <div>
+        <h2>REAR SEAT PHILOSOPHY</h2>
+        <p>
+            The rear cabin is where the Maybach reveals its true purpose.
+            Reclining executive seats, ambient lighting and near-total silence
+            transform every journey into a private sanctuary.
+        </p>
     </div>
+</section>
 
-</main>
+<!-- SPECS -->
+<section class="specs">
+    <h2>PERFORMANCE & ENGINEERING</h2>
+
+    <div class="spec-grid">
+        <div class="spec">
+            <h3>ACCELERATION</h3>
+            <p>0–100 km/h in approximately 4.4 seconds</p>
+        </div>
+
+        <div class="spec">
+            <h3>TOP SPEED</h3>
+            <p>Electronically limited to 250 km/h</p>
+        </div>
+
+        <div class="spec">
+            <h3>POWERTRAIN</h3>
+            <p>4.0L V8 or 6.0L V12 Biturbo engines</p>
+        </div>
+
+        <div class="spec">
+            <h3>TRANSMISSION</h3>
+            <p>9-speed automatic for seamless power delivery</p>
+        </div>
+
+        <div class="spec">
+            <h3>DRIVE SYSTEM</h3>
+            <p>4MATIC® all-wheel drive</p>
+        </div>
+
+        <div class="spec">
+            <h3>PHILOSOPHY</h3>
+            <p>Luxury first. Performance refined. Silence perfected.</p>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
-
