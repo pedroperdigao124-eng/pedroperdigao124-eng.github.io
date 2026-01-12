@@ -12,7 +12,7 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family:'Inter', sans-serif;
     background:#0a0a0a;
     color:#eaeaea;
     line-height:1.8;
@@ -33,10 +33,32 @@ nav a {
     text-decoration:none;
     font-size:0.85rem;
     letter-spacing:3px;
-    font-weight:500;
 }
 
-nav a:hover { opacity:0.6; }
+/* LANGUAGE SWITCH */
+.lang {
+    position:fixed;
+    top:30px;
+    right:40px;
+    display:flex;
+    gap:15px;
+    z-index:100;
+}
+
+.lang button {
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:0.75rem;
+    letter-spacing:2px;
+    cursor:pointer;
+    opacity:0.6;
+}
+
+.lang button.active {
+    opacity:1;
+    border-bottom:1px solid #fff;
+}
 
 /* SECTIONS */
 section {
@@ -54,7 +76,7 @@ section {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.65);
 }
 
 .hero-content {
@@ -66,107 +88,64 @@ section {
     font-family:'Orbitron', sans-serif;
     font-size:3.8rem;
     letter-spacing:6px;
-    margin-bottom:20px;
 }
 
-.hero p {
-    color:#cfcfcf;
-    font-size:1.1rem;
-}
-
-/* STORY */
-.story h2,
-.gallery-title,
-.specs h2 {
-    font-family:'Orbitron', sans-serif;
-    letter-spacing:4px;
-    font-size:2.2rem;
-    margin-bottom:30px;
-}
-
-.story p {
-    max-width:800px;
-    font-size:1.1rem;
-    color:#ccc;
-}
-
-/* GALLERY */
-.gallery {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-    gap:40px;
-}
-
-.card {
-    overflow:hidden;
-    border-radius:16px;
-}
-
-.card img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition: transform 0.8s ease;
-}
-
-.card:hover img {
-    transform: scale(1.08);
-}
-
-.card p {
-    margin-top:14px;
-    font-size:0.9rem;
-    color:#aaa;
-}
-
-/* PARALLAX BLOCK */
+/* PARALLAX SECTIONS */
 .parallax {
-    height:70vh;
-    background:url('images/maybachinteriorrear.png') center/cover fixed;
+    height:75vh;
     display:flex;
     align-items:center;
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
 }
 
-.parallax div {
+.parallax::before {
+    content:"";
+    position:absolute;
+    inset:0;
     background:rgba(0,0,0,0.6);
+}
+
+.parallax-content {
+    position:relative;
+    max-width:700px;
     padding:60px;
-    max-width:600px;
 }
 
 .parallax h2 {
     font-family:'Orbitron', sans-serif;
-    font-size:2rem;
     letter-spacing:4px;
+    margin-bottom:20px;
 }
 
-/* SPECS */
+/* SPECS GRID */
 .specs {
-    border-top:1px solid #222;
+    background:#0f0f0f;
 }
 
 .spec-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:30px;
 }
 
 .spec {
-    background:#111;
+    background:#151515;
     padding:30px;
-    border-radius:12px;
+    border-radius:14px;
 }
 
 .spec h3 {
     font-family:'Orbitron', sans-serif;
-    font-size:1rem;
+    font-size:0.95rem;
     letter-spacing:2px;
     margin-bottom:10px;
 }
 
-.spec p {
-    color:#bbb;
-    font-size:0.95rem;
-}
+/* LANGUAGE */
+[data-lang] { display:none; }
+[data-lang].active { display:block; }
 </style>
 </head>
 
@@ -177,105 +156,136 @@ section {
     <a href="maybach.html">MAYBACH</a>
 </nav>
 
+<div class="lang">
+    <button onclick="setLang('en')" id="enBtn">EN</button>
+    <button onclick="setLang('pt')" id="ptBtn">PT</button>
+</div>
+
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
         <h1>MAYBACH</h1>
-        <p>
-            This is not merely a vehicle.  
-            It is a statement of power, refinement and arrival.
+
+        <p data-lang="en">
+            Luxury is not seen. It is felt.
+        </p>
+
+        <p data-lang="pt">
+            O luxo não se vê. Sente-se.
         </p>
     </div>
 </section>
 
-<!-- STORY -->
-<section class="story">
-    <h2>THE EXPERIENCE</h2>
-    <p>
-        Owning a Mercedes-Maybach is a silent conversation with the world.
-        It speaks of success without shouting, of confidence without excess.
-        Every surface, every stitch and every movement has been engineered
-        to surround its occupants with absolute calm and authority.
-        This is luxury designed for those who no longer need to prove anything.
-    </p>
-</section>
+<!-- PARALLAX 1 – ENGINE -->
+<section class="parallax" style="background-image:url('images/maybachside.png')">
+    <div class="parallax-content">
+        <h2 data-lang="en">POWER & REFINEMENT</h2>
+        <h2 data-lang="pt">PODER E SOFISTICAÇÃO</h2>
 
-<!-- GALLERY -->
-<section>
-    <h2 class="gallery-title">DESIGN & CRAFTSMANSHIP</h2>
-    <div class="gallery">
+        <p data-lang="en">
+            Beneath the sculpted exterior lies a masterfully engineered powertrain.
+            V8 and V12 biturbo engines deliver effortless acceleration, ensuring that
+            performance is always present — yet never intrusive.
+        </p>
 
-        <div class="card">
-            <img src="images/maybachside.png">
-            <p>Extended proportions designed for presence and comfort.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/maybachrear.png">
-            <p>A rear design that defines elegance and restraint.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/maybachinteriorfront.png">
-            <p>Driver-focused technology blended with handcrafted luxury.</p>
-        </div>
-
-        <div class="card">
-            <img src="images/maybachtrunk.png">
-            <p>Spacious storage, engineered for refined long-distance travel.</p>
-        </div>
-
+        <p data-lang="pt">
+            Sob o design imponente encontra-se uma engenharia de excelência.
+            Motores V8 e V12 biturbo garantem aceleração imediata, sempre suave,
+            sempre silenciosa.
+        </p>
     </div>
 </section>
 
-<!-- PARALLAX -->
-<section class="parallax">
-    <div>
-        <h2>REAR SEAT PHILOSOPHY</h2>
-        <p>
-            The rear cabin is where the Maybach reveals its true purpose.
-            Reclining executive seats, ambient lighting and near-total silence
-            transform every journey into a private sanctuary.
+<!-- PARALLAX 2 – PERFORMANCE -->
+<section class="parallax" style="background-image:url('images/maybachrear.png')">
+    <div class="parallax-content">
+        <h2 data-lang="en">SILENT PERFORMANCE</h2>
+        <h2 data-lang="pt">PERFORMANCE SILENCIOSA</h2>
+
+        <p data-lang="en">
+            From 0 to 100 km/h in just over four seconds, the Maybach moves with
+            authority and precision. Advanced suspension systems isolate the cabin
+            from the outside world, transforming speed into serenity.
+        </p>
+
+        <p data-lang="pt">
+            Dos 0 aos 100 km/h em pouco mais de quatro segundos, o Maybach avança
+            com autoridade absoluta. A suspensão avançada transforma velocidade
+            em conforto puro.
+        </p>
+    </div>
+</section>
+
+<!-- PARALLAX 3 – INTERIOR -->
+<section class="parallax" style="background-image:url('images/maybachinteriorfront.png')">
+    <div class="parallax-content">
+        <h2 data-lang="en">CRAFTED INTERIOR</h2>
+        <h2 data-lang="pt">INTERIOR ARTESANAL</h2>
+
+        <p data-lang="en">
+            Hand-stitched leather, precision metalwork and ambient lighting
+            create an interior designed not to impress — but to endure.
+        </p>
+
+        <p data-lang="pt">
+            Couro costurado à mão, acabamentos metálicos de precisão e iluminação
+            ambiente criam um interior pensado para durar e marcar presença.
+        </p>
+    </div>
+</section>
+
+<!-- PARALLAX 4 – REAR EXPERIENCE -->
+<section class="parallax" style="background-image:url('images/maybachinteriorrear.png')">
+    <div class="parallax-content">
+        <h2 data-lang="en">REAR SEAT EXPERIENCE</h2>
+        <h2 data-lang="pt">EXPERIÊNCIA TRASEIRA</h2>
+
+        <p data-lang="en">
+            Executive rear seats, massage functions and near-total silence redefine
+            what it means to travel first class — every single day.
+        </p>
+
+        <p data-lang="pt">
+            Bancos executivos, função de massagem e silêncio absoluto redefinem
+            o conceito de viajar em primeira classe.
         </p>
     </div>
 </section>
 
 <!-- SPECS -->
 <section class="specs">
-    <h2>PERFORMANCE & ENGINEERING</h2>
-
     <div class="spec-grid">
         <div class="spec">
-            <h3>ACCELERATION</h3>
-            <p>0–100 km/h in approximately 4.4 seconds</p>
+            <h3>0–100 KM/H</h3>
+            <p>≈ 4.4 seconds</p>
         </div>
-
         <div class="spec">
             <h3>TOP SPEED</h3>
-            <p>Electronically limited to 250 km/h</p>
+            <p>250 km/h (limited)</p>
         </div>
-
         <div class="spec">
-            <h3>POWERTRAIN</h3>
-            <p>4.0L V8 or 6.0L V12 Biturbo engines</p>
+            <h3>ENGINES</h3>
+            <p>4.0L V8 / 6.0L V12 Biturbo</p>
         </div>
-
-        <div class="spec">
-            <h3>TRANSMISSION</h3>
-            <p>9-speed automatic for seamless power delivery</p>
-        </div>
-
-        <div class="spec">
-            <h3>DRIVE SYSTEM</h3>
-            <p>4MATIC® all-wheel drive</p>
-        </div>
-
         <div class="spec">
             <h3>PHILOSOPHY</h3>
-            <p>Luxury first. Performance refined. Silence perfected.</p>
+            <p>Luxury without compromise</p>
         </div>
     </div>
 </section>
+
+<script>
+function setLang(lang) {
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+    document.getElementById('ptBtn').classList.toggle('active', lang === 'pt');
+}
+
+setLang(localStorage.getItem('lang') || 'en');
+</script>
 
 </body>
 </html>
