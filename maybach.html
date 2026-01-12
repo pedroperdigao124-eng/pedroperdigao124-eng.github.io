@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 <meta charset="UTF-8">
 <title>Mercedes-Maybach | Ultimate Luxury</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@ nav a {
     letter-spacing:3px;
 }
 
-/* LANGUAGE */
+/* LANGUAGE SWITCH */
 .lang {
     position:fixed;
     top:30px;
@@ -70,19 +70,16 @@ section {
     background:url('images/maybachfront.png') center/cover fixed;
     display:flex;
     align-items:center;
-    position:relative;
 }
 
-.hero::before,
-.parallax::before {
+.hero::before {
     content:"";
     position:absolute;
     inset:0;
     background:rgba(0,0,0,0.65);
 }
 
-.hero-content,
-.parallax-content {
+.hero-content {
     position:relative;
     max-width:700px;
 }
@@ -93,7 +90,7 @@ section {
     letter-spacing:6px;
 }
 
-/* PARALLAX */
+/* PARALLAX SECTIONS */
 .parallax {
     height:75vh;
     display:flex;
@@ -103,7 +100,16 @@ section {
     background-position:center;
 }
 
+.parallax::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+
 .parallax-content {
+    position:relative;
+    max-width:700px;
     padding:60px;
 }
 
@@ -113,7 +119,7 @@ section {
     margin-bottom:20px;
 }
 
-/* SPECS */
+/* SPECS GRID */
 .specs {
     background:#0f0f0f;
 }
@@ -140,59 +146,6 @@ section {
 /* LANGUAGE */
 [data-lang] { display:none; }
 [data-lang].active { display:block; }
-
-/* MOBILE OPTIMIZATION */
-@media (max-width:768px) {
-
-    nav {
-        top:20px;
-        left:20px;
-        gap:20px;
-    }
-
-    nav a {
-        font-size:0.7rem;
-        letter-spacing:2px;
-    }
-
-    .lang {
-        top:20px;
-        right:20px;
-    }
-
-    section {
-        padding:100px 6%;
-    }
-
-    .hero {
-        height:85vh;
-        background-attachment:scroll;
-    }
-
-    .hero h1 {
-        font-size:2.4rem;
-        letter-spacing:4px;
-    }
-
-    .parallax {
-        height:auto;
-        min-height:70vh;
-        background-attachment:scroll;
-    }
-
-    .parallax-content {
-        padding:40px 20px;
-    }
-
-    .parallax h2 {
-        font-size:1.4rem;
-        letter-spacing:3px;
-    }
-
-    .spec-grid {
-        grid-template-columns:1fr;
-    }
-}
 </style>
 </head>
 
@@ -212,54 +165,112 @@ section {
 <section class="hero">
     <div class="hero-content">
         <h1>MAYBACH</h1>
-        <p data-lang="en">Luxury is not seen. It is felt.</p>
-        <p data-lang="pt">O luxo não se vê. Sente-se.</p>
+
+        <p data-lang="en">
+            Luxury is not seen. It is felt.
+        </p>
+
+        <p data-lang="pt">
+            O luxo não se vê. Sente-se.
+        </p>
     </div>
 </section>
 
-<!-- PARALLAX SECTIONS -->
+<!-- PARALLAX 1 – ENGINE -->
 <section class="parallax" style="background-image:url('images/maybachside.png')">
     <div class="parallax-content">
         <h2 data-lang="en">POWER & REFINEMENT</h2>
         <h2 data-lang="pt">PODER E SOFISTICAÇÃO</h2>
-        <p data-lang="en">V8 and V12 biturbo engines deliver effortless authority.</p>
-        <p data-lang="pt">Motores V8 e V12 biturbo entregam autoridade absoluta.</p>
+
+        <p data-lang="en">
+            Beneath the sculpted exterior lies a masterfully engineered powertrain.
+            V8 and V12 biturbo engines deliver effortless acceleration, ensuring that
+            performance is always present — yet never intrusive.
+        </p>
+
+        <p data-lang="pt">
+            Sob o design imponente encontra-se uma engenharia de excelência.
+            Motores V8 e V12 biturbo garantem aceleração imediata, sempre suave,
+            sempre silenciosa.
+        </p>
     </div>
 </section>
 
+<!-- PARALLAX 2 – PERFORMANCE -->
 <section class="parallax" style="background-image:url('images/maybachrear.png')">
     <div class="parallax-content">
         <h2 data-lang="en">SILENT PERFORMANCE</h2>
         <h2 data-lang="pt">PERFORMANCE SILENCIOSA</h2>
-        <p data-lang="en">0–100 km/h in approximately 4.4 seconds.</p>
-        <p data-lang="pt">0–100 km/h em aproximadamente 4,4 segundos.</p>
+
+        <p data-lang="en">
+            From 0 to 100 km/h in just over four seconds, the Maybach moves with
+            authority and precision. Advanced suspension systems isolate the cabin
+            from the outside world, transforming speed into serenity.
+        </p>
+
+        <p data-lang="pt">
+            Dos 0 aos 100 km/h em pouco mais de quatro segundos, o Maybach avança
+            com autoridade absoluta. A suspensão avançada transforma velocidade
+            em conforto puro.
+        </p>
     </div>
 </section>
 
+<!-- PARALLAX 3 – INTERIOR -->
 <section class="parallax" style="background-image:url('images/maybachinteriorfront.png')">
     <div class="parallax-content">
         <h2 data-lang="en">CRAFTED INTERIOR</h2>
         <h2 data-lang="pt">INTERIOR ARTESANAL</h2>
-        <p data-lang="en">Handcrafted materials meet advanced digital precision.</p>
-        <p data-lang="pt">Materiais artesanais com tecnologia de ponta.</p>
+
+        <p data-lang="en">
+            Hand-stitched leather, precision metalwork and ambient lighting
+            create an interior designed not to impress — but to endure.
+        </p>
+
+        <p data-lang="pt">
+            Couro costurado à mão, acabamentos metálicos de precisão e iluminação
+            ambiente criam um interior pensado para durar e marcar presença.
+        </p>
     </div>
 </section>
 
+<!-- PARALLAX 4 – REAR EXPERIENCE -->
 <section class="parallax" style="background-image:url('images/maybachinteriorrear.png')">
     <div class="parallax-content">
         <h2 data-lang="en">REAR SEAT EXPERIENCE</h2>
         <h2 data-lang="pt">EXPERIÊNCIA TRASEIRA</h2>
-        <p data-lang="en">First-class travel, every day.</p>
-        <p data-lang="pt">Viajar em primeira classe, todos os dias.</p>
+
+        <p data-lang="en">
+            Executive rear seats, massage functions and near-total silence redefine
+            what it means to travel first class — every single day.
+        </p>
+
+        <p data-lang="pt">
+            Bancos executivos, função de massagem e silêncio absoluto redefinem
+            o conceito de viajar em primeira classe.
+        </p>
     </div>
 </section>
 
+<!-- SPECS -->
 <section class="specs">
     <div class="spec-grid">
-        <div class="spec"><h3>0–100 KM/H</h3><p>≈ 4.4 s</p></div>
-        <div class="spec"><h3>TOP SPEED</h3><p>250 km/h</p></div>
-        <div class="spec"><h3>ENGINES</h3><p>V8 / V12 Biturbo</p></div>
-        <div class="spec"><h3>PHILOSOPHY</h3><p>Luxury without compromise</p></div>
+        <div class="spec">
+            <h3>0–100 KM/H</h3>
+            <p>≈ 4.4 seconds</p>
+        </div>
+        <div class="spec">
+            <h3>TOP SPEED</h3>
+            <p>250 km/h (limited)</p>
+        </div>
+        <div class="spec">
+            <h3>ENGINES</h3>
+            <p>4.0L V8 / 6.0L V12 Biturbo</p>
+        </div>
+        <div class="spec">
+            <h3>PHILOSOPHY</h3>
+            <p>Luxury without compromise</p>
+        </div>
     </div>
 </section>
 
@@ -272,6 +283,7 @@ function setLang(lang) {
     document.getElementById('enBtn').classList.toggle('active', lang === 'en');
     document.getElementById('ptBtn').classList.toggle('active', lang === 'pt');
 }
+
 setLang(localStorage.getItem('lang') || 'en');
 </script>
 
