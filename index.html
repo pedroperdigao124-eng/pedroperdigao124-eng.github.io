@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Maybach | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
@@ -16,55 +16,85 @@
         }
 
         body {
-            background-color: #0b0b0b;
-            color: #f2f2f2;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
 
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            display: flex;
-            gap: 40px;
-            z-index: 100;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #e5e5e5;
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.6;
-        }
-
-        /* HERO */
+        /* Fullscreen Hero */
         header {
+            position: relative;
+            width: 100%;
             height: 100vh;
+            background: url('images/maybach.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            letter-spacing: 10px;
-            margin-bottom: 20px;
+        /* Overlay escuro para contraste do texto */
+        header::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            top: 0;
+            left: 0;
         }
 
-        header p {
-            font-size: 0.9rem;
-            letter-spacing: 4px;
-            color: #aaa;
+        /* Conteúdo central */
+        .hero-content {
+            position: relative;
+            color: #fff;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            letter-spacing: 10px;
             text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            color: #ccc;
+        }
+
+        /* Botão central */
+        .hero-button {
+            padding: 15px 35px;
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* Keyframe animação */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
         footer {
@@ -78,20 +108,18 @@
 </head>
 <body>
 
-<nav>
-    <a href="index.html">HOME</a>
-    <a href="maybach.html">MAYBACH</a>
-</nav>
-
 <header>
-    <div>
+    <div class="hero-content">
         <h1>MAYBACH</h1>
         <p>Luxury Automotive Concept</p>
+        <a href="maybach.html">
+            <button class="hero-button">MAYBACH</button>
+        </a>
     </div>
 </header>
 
 <footer>
-    Projeto conceitual • Não oficial • Apenas para fins educacionais
+    Conceptual project • Not official • Educational purposes only
 </footer>
 
 </body>
