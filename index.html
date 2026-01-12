@@ -1,111 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Maybach | Home</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Maybach | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #000;
-            color: #fff;
-        }
+body {
+    font-family:'Inter', sans-serif;
+    background:#000;
+    color:#fff;
+}
 
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            display: flex;
-            gap: 40px;
-            z-index: 10;
-        }
+/* NAV */
+nav {
+    position:fixed;
+    top:30px;
+    left:40px;
+    display:flex;
+    gap:40px;
+    z-index:100;
+}
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 3px;
-            font-weight: 500;
-            transition: opacity 0.3s;
-        }
+nav a {
+    color:#fff;
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:3px;
+}
 
-        nav a:hover {
-            opacity: 0.6;
-        }
+/* LANGUAGE */
+.lang {
+    position:fixed;
+    top:30px;
+    right:40px;
+    display:flex;
+    gap:15px;
+    z-index:100;
+}
 
-        /* HERO */
-        header {
-            position: relative;
-            height: 100vh;
-            background: url('images/maybach.png') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+.lang button {
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:0.75rem;
+    letter-spacing:2px;
+    cursor:pointer;
+    opacity:0.6;
+}
 
-        header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-        }
+.lang button.active {
+    opacity:1;
+    border-bottom:1px solid #fff;
+}
 
-        .hero {
-            position: relative;
-            z-index: 1;
-            animation: fadeUp 1.5s ease;
-        }
+/* HERO */
+header {
+    height:100vh;
+    background:url('images/maybach.png') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            letter-spacing: 12px;
-            margin-bottom: 20px;
-        }
+header::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
 
-        .hero p {
-            font-size: 0.9rem;
-            letter-spacing: 4px;
-            color: #ccc;
-            margin-bottom: 40px;
-        }
+.hero {
+    position:relative;
+    z-index:1;
+    animation:fadeUp 1.5s ease;
+}
 
-        /* BUTTON */
-        .hero a {
-            text-decoration: none;
-        }
+.hero h1 {
+    font-family:'Playfair Display', serif;
+    font-size:4.5rem;
+    letter-spacing:12px;
+    margin-bottom:20px;
+}
 
-        .hero button {
-            background: transparent;
-            border: 2px solid #fff;
-            color: #fff;
-            padding: 15px 45px;
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
+.hero p {
+    font-size:0.9rem;
+    letter-spacing:4px;
+    color:#ccc;
+    margin-bottom:40px;
+}
 
-        .hero button:hover {
-            background: #fff;
-            color: #000;
-            transform: translateY(-3px);
-        }
+.hero button {
+    background:transparent;
+    border:2px solid #fff;
+    color:#fff;
+    padding:15px 45px;
+    font-size:0.9rem;
+    letter-spacing:3px;
+    cursor:pointer;
+    transition:all 0.4s ease;
+}
 
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+.hero button:hover {
+    background:#fff;
+    color:#000;
+    transform:translateY(-3px);
+}
+
+@keyframes fadeUp {
+    from { opacity:0; transform:translateY(30px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* LANGUAGE CONTENT */
+[data-lang] { display:none; }
+[data-lang].active { display:block; }
+
+/* MOBILE */
+@media (max-width:768px) {
+    nav {
+        top:20px;
+        left:20px;
+        gap:20px;
+    }
+
+    nav a {
+        font-size:0.7rem;
+        letter-spacing:2px;
+    }
+
+    .lang {
+        top:20px;
+        right:20px;
+    }
+
+    .hero h1 {
+        font-size:2.6rem;
+        letter-spacing:6px;
+    }
+
+    .hero p {
+        font-size:0.8rem;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <nav>
@@ -113,15 +160,37 @@
     <a href="maybach.html">MAYBACH</a>
 </nav>
 
+<div class="lang">
+    <button onclick="setLang('en')" id="enBtn">EN</button>
+    <button onclick="setLang('pt')" id="ptBtn">PT</button>
+</div>
+
 <header>
     <div class="hero">
         <h1>MAYBACH</h1>
-        <p>LUXURY AUTOMOTIVE CONCEPT</p>
+
+        <p data-lang="en">LUXURY AUTOMOTIVE CONCEPT</p>
+        <p data-lang="pt">CONCEITO AUTOMÓVEL DE LUXO</p>
+
         <a href="maybach.html">
-            <button>MAYBACH</button>
+            <button data-lang="en">MAYBACH</button>
+            <button data-lang="pt">MAYBACH</button>
         </a>
     </div>
 </header>
+
+<script>
+function setLang(lang) {
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+    document.getElementById('ptBtn').classList.toggle('active', lang === 'pt');
+}
+
+setLang(localStorage.getItem('lang') || 'en');
+</script>
 
 </body>
 </html>
