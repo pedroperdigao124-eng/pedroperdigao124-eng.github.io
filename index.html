@@ -5,122 +5,123 @@
     <title>Maybach | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            background: #000;
+            color: #fff;
         }
 
-        /* Fullscreen Hero */
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 30px;
+            left: 40px;
+            display: flex;
+            gap: 40px;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        /* HERO */
         header {
             position: relative;
-            width: 100%;
             height: 100vh;
-            background: url('images/maybach.jpg') center/cover no-repeat;
+            background: url('images/maybach.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
         }
 
-        /* Overlay escuro para contraste do texto */
         header::before {
             content: "";
             position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.4);
-            top: 0;
-            left: 0;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
         }
 
-        /* Conteúdo central */
-        .hero-content {
+        .hero {
             position: relative;
-            color: #fff;
             z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            animation: fadeInUp 1.5s ease-out;
+            animation: fadeUp 1.5s ease;
         }
 
-        .hero-content h1 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            letter-spacing: 10px;
-            text-transform: uppercase;
+            font-size: 4.5rem;
+            letter-spacing: 12px;
+            margin-bottom: 20px;
         }
 
-        .hero-content p {
-            font-size: 1rem;
+        .hero p {
+            font-size: 0.9rem;
             letter-spacing: 4px;
             color: #ccc;
+            margin-bottom: 40px;
         }
 
-        /* Botão central */
-        .hero-button {
-            padding: 15px 35px;
-            background-color: transparent;
+        /* BUTTON */
+        .hero a {
+            text-decoration: none;
+        }
+
+        .hero button {
+            background: transparent;
             border: 2px solid #fff;
             color: #fff;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            padding: 15px 45px;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
-        .hero-button:hover {
-            background-color: #fff;
+        .hero button:hover {
+            background: #fff;
             color: #000;
+            transform: translateY(-3px);
         }
 
-        /* Keyframe animação */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px);}
-            100% { opacity: 1; transform: translateY(0);}
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.75rem;
-            color: #777;
-            border-top: 1px solid #1e1e1e;
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="maybach.html">MAYBACH</a>
+</nav>
+
 <header>
-    <div class="hero-content">
+    <div class="hero">
         <h1>MAYBACH</h1>
-        <p>Luxury Automotive Concept</p>
+        <p>LUXURY AUTOMOTIVE CONCEPT</p>
         <a href="maybach.html">
-            <button class="hero-button">MAYBACH</button>
+            <button>MAYBACH</button>
         </a>
     </div>
 </header>
-
-<footer>
-    Conceptual project • Not official • Educational purposes only
-</footer>
 
 </body>
 </html>
