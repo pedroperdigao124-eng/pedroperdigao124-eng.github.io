@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Maybach | Heritage & Legacy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Luxury Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    background:#000;
+    color:#fff;
+    font-family:'Manrope', sans-serif;
+}
+
+/* NAV */
+nav {
+    position:fixed;
+    top:30px;
+    left:40px;
+    display:flex;
+    gap:40px;
+    z-index:100;
+}
+
+nav a {
+    color:#fff;
+    text-decoration:none;
+    font-size:0.75rem;
+    letter-spacing:3px;
+}
+
+/* LANGUAGE */
+.lang {
+    position:fixed;
+    top:30px;
+    right:40px;
+    display:flex;
+    gap:15px;
+    z-index:100;
+}
+
+.lang button {
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:0.7rem;
+    letter-spacing:2px;
+    cursor:pointer;
+    opacity:0.6;
+}
+
+.lang button.active {
+    opacity:1;
+    border-bottom:1px solid #fff;
+}
+
+/* HERO */
+.hero {
+    height:70vh;
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+               url('images/maybachside.png') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero h1 {
+    font-family:'Cormorant Garamond', serif;
+    font-size:4rem;
+    letter-spacing:6px;
+}
+
+/* CONTENT */
+section {
+    padding:120px 20%;
+}
+
+section h2 {
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.4rem;
+    margin-bottom:30px;
+}
+
+section p {
+    font-size:0.95rem;
+    line-height:2;
+    color:#ccc;
+    margin-bottom:30px;
+}
+
+/* MULTI LANG */
+[data-lang="pt"] { display:none; }
+
+/* MOBILE */
+@media (max-width:900px) {
+
+    nav, .lang {
+        top:20px;
+    }
+
+    nav { left:20px; }
+    .lang { right:20px; }
+
+    .hero h1 {
+        font-size:2.6rem;
+        letter-spacing:4px;
+    }
+
+    section {
+        padding:80px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="maybach.html">MAYBACH</a>
+    <a href="history.html">HISTORY</a>
+</nav>
+
+<div class="lang">
+    <button onclick="setLang('en')" id="enBtn" class="active">EN</button>
+    <button onclick="setLang('pt')" id="ptBtn">PT</button>
+</div>
+
+<div class="hero">
+    <h1>HERITAGE & LEGACY</h1>
+</div>
+
+<section>
+
+<!-- ENGLISH -->
+<div data-lang="en">
+
+<h2>The Origins of Excellence</h2>
+<p>
+Founded in 1909 by Wilhelm Maybach, one of the most influential engineers in automotive history,
+the Maybach brand was conceived with a singular vision: to create the most refined engines and
+vehicles ever built. Wilhelm Maybach’s philosophy was clear — engineering should serve elegance,
+silence, and absolute reliability.
+</p>
+
+<h2>A Name Synonymous with Prestige</h2>
+<p>
+During the early 20
