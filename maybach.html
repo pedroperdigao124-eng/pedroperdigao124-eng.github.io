@@ -5,8 +5,8 @@
 <title>Maybach | Luxury Performance</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Luxury Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -14,7 +14,7 @@
 body {
     background:#000;
     color:#fff;
-    font-family:'Inter', sans-serif;
+    font-family:'Manrope', sans-serif;
 }
 
 /* NAV */
@@ -30,7 +30,7 @@ nav {
 nav a {
     color:#fff;
     text-decoration:none;
-    font-size:0.8rem;
+    font-size:0.75rem;
     letter-spacing:3px;
 }
 
@@ -48,7 +48,7 @@ nav a {
     background:none;
     border:none;
     color:#fff;
-    font-size:0.75rem;
+    font-size:0.7rem;
     letter-spacing:2px;
     cursor:pointer;
     opacity:0.6;
@@ -73,25 +73,25 @@ nav a {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.5);
 }
 
 .hero-text {
     position:relative;
     z-index:1;
-    max-width:500px;
+    max-width:520px;
 }
 
 .hero-text h1 {
-    font-family:'Playfair Display', serif;
-    font-size:3.5rem;
+    font-family:'Cormorant Garamond', serif;
+    font-size:3.8rem;
     letter-spacing:6px;
 }
 
 .hero-text p {
-    margin-top:20px;
+    margin-top:25px;
     font-size:0.95rem;
-    line-height:1.7;
+    line-height:1.8;
     color:#ddd;
 }
 
@@ -100,13 +100,13 @@ section {
     padding:120px 10%;
 }
 
-/* IMAGE + TEXT */
+/* IMAGE BLOCK */
 .block {
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:70px;
     align-items:center;
-    margin-bottom:120px;
+    margin-bottom:140px;
 }
 
 .block img {
@@ -120,14 +120,14 @@ section {
 }
 
 .block h2 {
-    font-family:'Playfair Display', serif;
-    font-size:2rem;
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.3rem;
     margin-bottom:20px;
 }
 
 .block p {
-    font-size:0.9rem;
-    line-height:1.8;
+    font-size:0.95rem;
+    line-height:1.85;
     color:#ccc;
 }
 
@@ -135,16 +135,16 @@ section {
 .specs {
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:40px;
+    gap:50px;
 }
 
 .spec {
     border-top:1px solid #333;
-    padding-top:20px;
+    padding-top:25px;
 }
 
 .spec h3 {
-    font-size:0.75rem;
+    font-size:0.7rem;
     letter-spacing:3px;
     margin-bottom:10px;
 }
@@ -174,7 +174,7 @@ section {
     }
 
     .hero-text h1 {
-        font-size:2.4rem;
+        font-size:2.6rem;
     }
 
     section {
@@ -183,6 +183,7 @@ section {
 
     .block {
         grid-template-columns:1fr;
+        gap:40px;
     }
 
     .specs {
@@ -209,96 +210,85 @@ section {
         <h1>MAYBACH</h1>
 
         <p data-lang="en">
-            Crafted for those who define success by presence, not volume.
-            Maybach represents a balance between absolute power and refined elegance.
+            Designed for those who understand that true luxury is never loud.
+            Maybach is where refined craftsmanship meets commanding performance.
         </p>
 
         <p data-lang="pt">
-            Criado para quem define sucesso pela presença, não pelo volume.
-            Maybach representa o equilíbrio entre poder absoluto e elegância refinada.
+            Criado para quem entende que o verdadeiro luxo nunca precisa ser exibido.
+            O Maybach é a união entre artesanato refinado e performance imponente.
         </p>
     </div>
 </div>
 
 <section>
 
+<!-- BLOCKS -->
 <div class="block">
-    <img src="images/maybachside.png" alt="Side view">
+    <img src="images/maybachside.png">
     <div>
-        <h2 data-lang="en">Presence & Design</h2>
-        <h2 data-lang="pt">Presença & Design</h2>
-
-        <p data-lang="en">
-            Sculpted proportions, a commanding stance and timeless surfaces give Maybach
-            an unmistakable identity. Every line communicates authority and calm confidence.
-        </p>
-
-        <p data-lang="pt">
-            Proporções esculpidas, postura imponente e superfícies intemporais
-            conferem ao Maybach uma identidade inconfundível.
+        <h2>Design & Presence</h2>
+        <p>
+            The elongated silhouette and precise surfaces create an unmistakable presence.
+            Every detail reflects authority, balance and timeless elegance.
         </p>
     </div>
 </div>
 
 <div class="block">
     <div>
-        <h2 data-lang="en">Interior Excellence</h2>
-        <h2 data-lang="pt">Excelência Interior</h2>
-
-        <p data-lang="en">
-            Handcrafted materials, intelligent lighting and silent comfort
-            transform the cabin into a private sanctuary in motion.
-        </p>
-
-        <p data-lang="pt">
-            Materiais artesanais, iluminação inteligente e conforto absoluto
-            transformam o habitáculo num santuário privado em movimento.
+        <h2>Rear Identity</h2>
+        <p>
+            A sculpted rear design emphasizes width and stability.
+            Chrome accents and lighting signatures communicate exclusivity from every angle.
         </p>
     </div>
-    <img src="images/maybachinteriorrear.png" alt="Interior">
+    <img src="images/maybachrear.png">
+</div>
+
+<div class="block">
+    <img src="images/maybachinteriorfront.png">
+    <div>
+        <h2>Front Interior</h2>
+        <p>
+            The cockpit blends advanced digital interfaces with handcrafted materials.
+            Every control is positioned for effortless interaction and comfort.
+        </p>
+    </div>
+</div>
+
+<div class="block">
+    <div>
+        <h2>Rear Comfort</h2>
+        <p>
+            Rear seating transforms travel into a private lounge experience.
+            Acoustic isolation and executive seating ensure unmatched serenity.
+        </p>
+    </div>
+    <img src="images/maybachinteriorrear.png">
+</div>
+
+<div class="block">
+    <img src="images/maybachtrunk.png">
+    <div>
+        <h2>Practical Luxury</h2>
+        <p>
+            A spacious trunk offers functionality without compromising elegance.
+            Designed to support long-distance journeys with effortless convenience.
+        </p>
+    </div>
 </div>
 
 <!-- SPECS -->
 <div class="specs">
-    <div class="spec">
-        <h3>ENGINE</h3>
-        <p>4.0L V8 Biturbo</p>
-    </div>
-
-    <div class="spec">
-        <h3>POWER</h3>
-        <p>503 HP</p>
-    </div>
-
-    <div class="spec">
-        <h3>0–100 KM/H</h3>
-        <p>4.8 seconds</p>
-    </div>
-
-    <div class="spec">
-        <h3>TOP SPEED</h3>
-        <p>250 km/h (electronically limited)</p>
-    </div>
-
-    <div class="spec">
-        <h3>TRANSMISSION</h3>
-        <p>9G-TRONIC Automatic</p>
-    </div>
-
-    <div class="spec">
-        <h3>DRIVETRAIN</h3>
-        <p>All-Wheel Drive (4MATIC)</p>
-    </div>
-
-    <div class="spec">
-        <h3>SUSPENSION</h3>
-        <p>E-Active Body Control</p>
-    </div>
-
-    <div class="spec">
-        <h3>INTERIOR</h3>
-        <p>Nappa Leather & Wood Veneers</p>
-    </div>
+    <div class="spec"><h3>ENGINE</h3><p>4.0L V8 Biturbo delivering refined power delivery.</p></div>
+    <div class="spec"><h3>POWER</h3><p>503 HP engineered for smooth yet commanding acceleration.</p></div>
+    <div class="spec"><h3>0–100 KM/H</h3><p>4.8 seconds with effortless traction.</p></div>
+    <div class="spec"><h3>TOP SPEED</h3><p>250 km/h electronically limited for stability.</p></div>
+    <div class="spec"><h3>TRANSMISSION</h3><p>9G-TRONIC automatic for seamless gear transitions.</p></div>
+    <div class="spec"><h3>DRIVETRAIN</h3><p>4MATIC all-wheel drive ensures confidence.</p></div>
+    <div class="spec"><h3>SUSPENSION</h3><p>E-Active Body Control adapts in real time.</p></div>
+    <div class="spec"><h3>INTERIOR</h3><p>Exclusive leathers, wood veneers and ambient lighting.</p></div>
 </div>
 
 </section>
@@ -311,11 +301,7 @@ function setLang(lang) {
 
     document.getElementById('enBtn').classList.toggle('active', lang === 'en');
     document.getElementById('ptBtn').classList.toggle('active', lang === 'pt');
-
-    localStorage.setItem('lang', lang);
 }
-
-setLang(localStorage.getItem('lang') || 'en');
 </script>
 
 </body>
