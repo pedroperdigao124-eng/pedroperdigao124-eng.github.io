@@ -5,304 +5,133 @@
 <title>Maybach | Luxury Performance</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Luxury Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
-    background:#000;
-    color:#fff;
-    font-family:'Manrope', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:'Manrope',sans-serif}
 
 /* NAV */
-nav {
-    position:fixed;
-    top:30px;
-    left:40px;
-    display:flex;
-    gap:40px;
-    z-index:100;
-}
-
-nav a {
-    color:#fff;
-    text-decoration:none;
-    font-size:0.75rem;
-    letter-spacing:3px;
-}
-
-/* LANGUAGE */
-.lang {
-    position:fixed;
-    top:30px;
-    right:40px;
-    display:flex;
-    gap:15px;
-    z-index:100;
-}
-
-.lang button {
-    background:none;
-    border:none;
-    color:#fff;
-    font-size:0.7rem;
-    letter-spacing:2px;
-    cursor:pointer;
-    opacity:0.6;
-}
-
-.lang button.active {
-    opacity:1;
-    border-bottom:1px solid #fff;
-}
+.main-nav{
+position:fixed;top:30px;left:40px;right:40px;
+display:flex;justify-content:space-between;align-items:center;z-index:100}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;letter-spacing:6px}
+.links{display:flex;gap:40px}
+.links a{color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:3px}
 
 /* HERO */
-.hero {
-    height:100vh;
-    background:url('images/maybachfront.png') center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    padding-left:10%;
-    position:relative;
-}
-
-.hero::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.5);
-}
-
-.hero-text {
-    position:relative;
-    z-index:1;
-    max-width:520px;
-}
-
-.hero-text h1 {
-    font-family:'Cormorant Garamond', serif;
-    font-size:3.8rem;
-    letter-spacing:6px;
-}
-
-.hero-text p {
-    margin-top:25px;
-    font-size:0.95rem;
-    line-height:1.8;
-    color:#ddd;
-}
+.hero{
+height:100vh;background:url('images/maybachfront.png') center/cover no-repeat;
+display:flex;align-items:center;padding-left:10%;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.hero-text{position:relative;z-index:1;max-width:520px}
+.hero-text h1{font-family:'Cormorant Garamond',serif;font-size:3.8rem}
+.hero-text p{margin-top:25px;font-size:.95rem;line-height:1.8;color:#ddd}
 
 /* SECTION */
-section {
-    padding:120px 10%;
-}
-
-/* IMAGE BLOCK */
-.block {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-    margin-bottom:140px;
-}
-
-.block img {
-    width:100%;
-    border-radius:6px;
-    transition:transform 0.6s ease;
-}
-
-.block img:hover {
-    transform:scale(1.05);
-}
-
-.block h2 {
-    font-family:'Cormorant Garamond', serif;
-    font-size:2.3rem;
-    margin-bottom:20px;
-}
-
-.block p {
-    font-size:0.95rem;
-    line-height:1.85;
-    color:#ccc;
-}
+section{padding:120px 10%}
+.block{
+display:grid;grid-template-columns:1fr 1fr;
+gap:70px;align-items:center;margin-bottom:140px}
+.block img{width:100%;border-radius:6px;transition:.6s}
+.block img:hover{transform:scale(1.05)}
+.block h2{font-family:'Cormorant Garamond',serif;font-size:2.3rem;margin-bottom:20px}
+.block p{font-size:.95rem;line-height:1.85;color:#ccc}
 
 /* SPECS */
-.specs {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:50px;
-}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);gap:50px}
+.spec{border-top:1px solid #333;padding-top:25px}
+.spec h3{font-size:.7rem;letter-spacing:3px;margin-bottom:10px}
+.spec p{font-size:.85rem;color:#ccc}
 
-.spec {
-    border-top:1px solid #333;
-    padding-top:25px;
-}
-
-.spec h3 {
-    font-size:0.7rem;
-    letter-spacing:3px;
-    margin-bottom:10px;
-}
-
-.spec p {
-    font-size:0.85rem;
-    color:#ccc;
-}
-
-/* MULTI LANGUAGE */
-[data-lang="pt"] { display:none; }
+/* FOOTER */
+footer{padding:60px 20px;text-align:center;border-top:1px solid #222}
+.footer-links{display:flex;justify-content:center;gap:30px;margin-bottom:20px}
+.footer-links a{color:#888;text-decoration:none;font-size:.7rem;letter-spacing:2px}
+footer p{font-size:.65rem;color:#555}
 
 /* MOBILE */
-@media (max-width:900px) {
-
-    nav, .lang {
-        top:20px;
-    }
-
-    nav { left:20px; }
-    .lang { right:20px; }
-
-    .hero {
-        padding:0 20px;
-        justify-content:center;
-        text-align:center;
-    }
-
-    .hero-text h1 {
-        font-size:2.6rem;
-    }
-
-    section {
-        padding:80px 20px;
-    }
-
-    .block {
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .specs {
-        grid-template-columns:1fr;
-    }
+@media(max-width:900px){
+.main-nav{top:20px;left:20px;right:20px}
+.hero{padding:0 20px;justify-content:center;text-align:center}
+section{padding:80px 20px}
+.block{grid-template-columns:1fr}
+.specs{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-    <a href="index.html">HOME</a>
-    <a href="maybach.html">MAYBACH</a>
+<nav class="main-nav">
+<div class="brand">MAYBACH</div>
+<div class="links">
+<a href="index.html">HOME</a>
+<a href="maybach.html">MAYBACH</a>
+<a href="history.html">HISTORY</a>
+</div>
 </nav>
 
-<div class="lang">
-    <button onclick="setLang('en')" id="enBtn" class="active">EN</button>
-    <button onclick="setLang('pt')" id="ptBtn">PT</button>
-</div>
-
 <div class="hero">
-    <div class="hero-text">
-        <h1>MAYBACH</h1>
-
-        <p data-lang="en">
-            Designed for those who understand that true luxury is never loud.
-            Maybach is where refined craftsmanship meets commanding performance.
-        </p>
-
-        <p data-lang="pt">
-            Criado para quem entende que o verdadeiro luxo nunca precisa ser exibido.
-            O Maybach é a união entre artesanato refinado e performance imponente.
-        </p>
-    </div>
+<div class="hero-text">
+<h1>MAYBACH</h1>
+<p>Where power, craftsmanship and prestige converge.</p>
+</div>
 </div>
 
 <section>
 
-<!-- BLOCKS -->
 <div class="block">
-    <img src="images/maybachside.png">
-    <div>
-        <h2>Design & Presence</h2>
-        <p>
-            The elongated silhouette and precise surfaces create an unmistakable presence.
-            Every detail reflects authority, balance and timeless elegance.
-        </p>
-    </div>
+<img src="images/maybachside.png">
+<div><h2>Design & Presence</h2>
+<p>Timeless proportions and commanding elegance define every angle.</p></div>
 </div>
 
 <div class="block">
-    <div>
-        <h2>Rear Identity</h2>
-        <p>
-            A sculpted rear design emphasizes width and stability.
-            Chrome accents and lighting signatures communicate exclusivity from every angle.
-        </p>
-    </div>
-    <img src="images/maybachrear.png">
+<div><h2>Rear Identity</h2>
+<p>A sculpted rear that communicates exclusivity and authority.</p></div>
+<img src="images/maybachrear.png">
 </div>
 
 <div class="block">
-    <img src="images/maybachinteriorfront.png">
-    <div>
-        <h2>Front Interior</h2>
-        <p>
-            The cockpit blends advanced digital interfaces with handcrafted materials.
-            Every control is positioned for effortless interaction and comfort.
-        </p>
-    </div>
+<img src="images/maybachinteriorfront.png">
+<div><h2>Front Interior</h2>
+<p>Digital intelligence blended with handcrafted luxury.</p></div>
 </div>
 
 <div class="block">
-    <div>
-        <h2>Rear Comfort</h2>
-        <p>
-            Rear seating transforms travel into a private lounge experience.
-            Acoustic isolation and executive seating ensure unmatched serenity.
-        </p>
-    </div>
-    <img src="images/maybachinteriorrear.png">
+<div><h2>Rear Comfort</h2>
+<p>Executive seating transforms travel into a private sanctuary.</p></div>
+<img src="images/maybachinteriorrear.png">
 </div>
 
 <div class="block">
-    <img src="images/maybachtrunk.png">
-    <div>
-        <h2>Practical Luxury</h2>
-        <p>
-            A spacious trunk offers functionality without compromising elegance.
-            Designed to support long-distance journeys with effortless convenience.
-        </p>
-    </div>
+<img src="images/maybachtrunk.png">
+<div><h2>Practical Luxury</h2>
+<p>Functionality designed with the same elegance as the cabin.</p></div>
 </div>
 
-<!-- SPECS -->
 <div class="specs">
-    <div class="spec"><h3>ENGINE</h3><p>4.0L V8 Biturbo delivering refined power delivery.</p></div>
-    <div class="spec"><h3>POWER</h3><p>503 HP engineered for smooth yet commanding acceleration.</p></div>
-    <div class="spec"><h3>0–100 KM/H</h3><p>4.8 seconds with effortless traction.</p></div>
-    <div class="spec"><h3>TOP SPEED</h3><p>250 km/h electronically limited for stability.</p></div>
-    <div class="spec"><h3>TRANSMISSION</h3><p>9G-TRONIC automatic for seamless gear transitions.</p></div>
-    <div class="spec"><h3>DRIVETRAIN</h3><p>4MATIC all-wheel drive ensures confidence.</p></div>
-    <div class="spec"><h3>SUSPENSION</h3><p>E-Active Body Control adapts in real time.</p></div>
-    <div class="spec"><h3>INTERIOR</h3><p>Exclusive leathers, wood veneers and ambient lighting.</p></div>
+<div class="spec"><h3>ENGINE</h3><p>4.0L V8 Biturbo</p></div>
+<div class="spec"><h3>POWER</h3><p>503 HP</p></div>
+<div class="spec"><h3>0–100 KM/H</h3><p>4.8 seconds</p></div>
+<div class="spec"><h3>TOP SPEED</h3><p>250 km/h</p></div>
+<div class="spec"><h3>TRANSMISSION</h3><p>9G-TRONIC</p></div>
+<div class="spec"><h3>DRIVETRAIN</h3><p>4MATIC AWD</p></div>
+<div class="spec"><h3>SUSPENSION</h3><p>E-Active Body Control</p></div>
+<div class="spec"><h3>INTERIOR</h3><p>Nappa Leather & Wood</p></div>
 </div>
 
 </section>
 
-<script>
-function setLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-    });
-
-    document.getElementById('enBtn').classList.toggle('active', lang === 'en');
-    document.getElementById('ptBtn').classList.toggle('active', lang === 'pt');
-}
-</script>
+<footer>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="maybach.html">Maybach</a>
+<a href="history.html">History</a>
+</div>
+<p>© Concept Project – Luxury Automotive Study</p>
+</footer>
 
 </body>
 </html>
