@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mercedes-Maybach | Ultimate Luxury</title>
+<title>Maybach | Luxury Performance</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 
 body {
+    background:#000;
+    color:#fff;
     font-family:'Inter', sans-serif;
-    background:#0a0a0a;
-    color:#eaeaea;
-    line-height:1.8;
 }
 
 /* NAV */
@@ -31,7 +30,7 @@ nav {
 nav a {
     color:#fff;
     text-decoration:none;
-    font-size:0.85rem;
+    font-size:0.8rem;
     letter-spacing:3px;
 }
 
@@ -60,136 +59,133 @@ nav a {
     border-bottom:1px solid #fff;
 }
 
-/* SECTIONS */
-section {
-    padding:140px 8%;
-}
-
+/* HERO */
 .hero {
     height:100vh;
-    background:url('images/maybachfront.png') center/cover fixed;
+    background:url('images/maybachfront.png') center/cover no-repeat;
     display:flex;
     align-items:center;
+    padding-left:10%;
     position:relative;
 }
 
-.hero::before,
-.parallax::before {
+.hero::before {
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.65);
+    background:rgba(0,0,0,0.45);
 }
 
-.hero-content,
-.parallax-content {
+.hero-text {
     position:relative;
-    max-width:700px;
+    z-index:1;
+    max-width:500px;
 }
 
-.hero h1 {
-    font-family:'Orbitron', sans-serif;
-    font-size:3.8rem;
+.hero-text h1 {
+    font-family:'Playfair Display', serif;
+    font-size:3.5rem;
     letter-spacing:6px;
 }
 
-/* PARALLAX */
-.parallax {
-    height:75vh;
-    display:flex;
+.hero-text p {
+    margin-top:20px;
+    font-size:0.95rem;
+    line-height:1.7;
+    color:#ddd;
+}
+
+/* SECTION */
+section {
+    padding:120px 10%;
+}
+
+/* IMAGE + TEXT */
+.block {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
     align-items:center;
-    background-size:cover;
-    background-attachment:fixed;
-    background-position:center;
+    margin-bottom:120px;
 }
 
-.parallax-content {
-    padding:60px;
+.block img {
+    width:100%;
+    border-radius:6px;
+    transition:transform 0.6s ease;
 }
 
-.parallax h2 {
-    font-family:'Orbitron', sans-serif;
-    letter-spacing:4px;
+.block img:hover {
+    transform:scale(1.05);
+}
+
+.block h2 {
+    font-family:'Playfair Display', serif;
+    font-size:2rem;
     margin-bottom:20px;
+}
+
+.block p {
+    font-size:0.9rem;
+    line-height:1.8;
+    color:#ccc;
 }
 
 /* SPECS */
 .specs {
-    background:#0f0f0f;
-}
-
-.spec-grid {
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
 }
 
 .spec {
-    background:#151515;
-    padding:30px;
-    border-radius:14px;
+    border-top:1px solid #333;
+    padding-top:20px;
 }
 
 .spec h3 {
-    font-family:'Orbitron', sans-serif;
-    font-size:0.95rem;
-    letter-spacing:2px;
+    font-size:0.75rem;
+    letter-spacing:3px;
     margin-bottom:10px;
 }
 
-/* LANGUAGE */
-[data-lang] { display:none; }
-[data-lang].active { display:block; }
+.spec p {
+    font-size:0.85rem;
+    color:#ccc;
+}
 
-/* MOBILE OPTIMIZATION */
-@media (max-width:768px) {
+/* MULTI LANGUAGE */
+[data-lang="pt"] { display:none; }
 
-    nav {
+/* MOBILE */
+@media (max-width:900px) {
+
+    nav, .lang {
         top:20px;
-        left:20px;
-        gap:20px;
     }
 
-    nav a {
-        font-size:0.7rem;
-        letter-spacing:2px;
+    nav { left:20px; }
+    .lang { right:20px; }
+
+    .hero {
+        padding:0 20px;
+        justify-content:center;
+        text-align:center;
     }
 
-    .lang {
-        top:20px;
-        right:20px;
+    .hero-text h1 {
+        font-size:2.4rem;
     }
 
     section {
-        padding:100px 6%;
+        padding:80px 20px;
     }
 
-    .hero {
-        height:85vh;
-        background-attachment:scroll;
+    .block {
+        grid-template-columns:1fr;
     }
 
-    .hero h1 {
-        font-size:2.4rem;
-        letter-spacing:4px;
-    }
-
-    .parallax {
-        height:auto;
-        min-height:70vh;
-        background-attachment:scroll;
-    }
-
-    .parallax-content {
-        padding:40px 20px;
-    }
-
-    .parallax h2 {
-        font-size:1.4rem;
-        letter-spacing:3px;
-    }
-
-    .spec-grid {
+    .specs {
         grid-template-columns:1fr;
     }
 }
@@ -204,74 +200,121 @@ section {
 </nav>
 
 <div class="lang">
-    <button onclick="setLang('en')" id="enBtn">EN</button>
+    <button onclick="setLang('en')" id="enBtn" class="active">EN</button>
     <button onclick="setLang('pt')" id="ptBtn">PT</button>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
+<div class="hero">
+    <div class="hero-text">
         <h1>MAYBACH</h1>
-        <p data-lang="en">Luxury is not seen. It is felt.</p>
-        <p data-lang="pt">O luxo não se vê. Sente-se.</p>
-    </div>
-</section>
 
-<!-- PARALLAX SECTIONS -->
-<section class="parallax" style="background-image:url('images/maybachside.png')">
-    <div class="parallax-content">
-        <h2 data-lang="en">POWER & REFINEMENT</h2>
-        <h2 data-lang="pt">PODER E SOFISTICAÇÃO</h2>
-        <p data-lang="en">V8 and V12 biturbo engines deliver effortless authority.</p>
-        <p data-lang="pt">Motores V8 e V12 biturbo entregam autoridade absoluta.</p>
-    </div>
-</section>
+        <p data-lang="en">
+            Crafted for those who define success by presence, not volume.
+            Maybach represents a balance between absolute power and refined elegance.
+        </p>
 
-<section class="parallax" style="background-image:url('images/maybachrear.png')">
-    <div class="parallax-content">
-        <h2 data-lang="en">SILENT PERFORMANCE</h2>
-        <h2 data-lang="pt">PERFORMANCE SILENCIOSA</h2>
-        <p data-lang="en">0–100 km/h in approximately 4.4 seconds.</p>
-        <p data-lang="pt">0–100 km/h em aproximadamente 4,4 segundos.</p>
+        <p data-lang="pt">
+            Criado para quem define sucesso pela presença, não pelo volume.
+            Maybach representa o equilíbrio entre poder absoluto e elegância refinada.
+        </p>
     </div>
-</section>
+</div>
 
-<section class="parallax" style="background-image:url('images/maybachinteriorfront.png')">
-    <div class="parallax-content">
-        <h2 data-lang="en">CRAFTED INTERIOR</h2>
-        <h2 data-lang="pt">INTERIOR ARTESANAL</h2>
-        <p data-lang="en">Handcrafted materials meet advanced digital precision.</p>
-        <p data-lang="pt">Materiais artesanais com tecnologia de ponta.</p>
-    </div>
-</section>
+<section>
 
-<section class="parallax" style="background-image:url('images/maybachinteriorrear.png')">
-    <div class="parallax-content">
-        <h2 data-lang="en">REAR SEAT EXPERIENCE</h2>
-        <h2 data-lang="pt">EXPERIÊNCIA TRASEIRA</h2>
-        <p data-lang="en">First-class travel, every day.</p>
-        <p data-lang="pt">Viajar em primeira classe, todos os dias.</p>
-    </div>
-</section>
+<div class="block">
+    <img src="images/maybachside.png" alt="Side view">
+    <div>
+        <h2 data-lang="en">Presence & Design</h2>
+        <h2 data-lang="pt">Presença & Design</h2>
 
-<section class="specs">
-    <div class="spec-grid">
-        <div class="spec"><h3>0–100 KM/H</h3><p>≈ 4.4 s</p></div>
-        <div class="spec"><h3>TOP SPEED</h3><p>250 km/h</p></div>
-        <div class="spec"><h3>ENGINES</h3><p>V8 / V12 Biturbo</p></div>
-        <div class="spec"><h3>PHILOSOPHY</h3><p>Luxury without compromise</p></div>
+        <p data-lang="en">
+            Sculpted proportions, a commanding stance and timeless surfaces give Maybach
+            an unmistakable identity. Every line communicates authority and calm confidence.
+        </p>
+
+        <p data-lang="pt">
+            Proporções esculpidas, postura imponente e superfícies intemporais
+            conferem ao Maybach uma identidade inconfundível.
+        </p>
     </div>
+</div>
+
+<div class="block">
+    <div>
+        <h2 data-lang="en">Interior Excellence</h2>
+        <h2 data-lang="pt">Excelência Interior</h2>
+
+        <p data-lang="en">
+            Handcrafted materials, intelligent lighting and silent comfort
+            transform the cabin into a private sanctuary in motion.
+        </p>
+
+        <p data-lang="pt">
+            Materiais artesanais, iluminação inteligente e conforto absoluto
+            transformam o habitáculo num santuário privado em movimento.
+        </p>
+    </div>
+    <img src="images/maybachinteriorrear.png" alt="Interior">
+</div>
+
+<!-- SPECS -->
+<div class="specs">
+    <div class="spec">
+        <h3>ENGINE</h3>
+        <p>4.0L V8 Biturbo</p>
+    </div>
+
+    <div class="spec">
+        <h3>POWER</h3>
+        <p>503 HP</p>
+    </div>
+
+    <div class="spec">
+        <h3>0–100 KM/H</h3>
+        <p>4.8 seconds</p>
+    </div>
+
+    <div class="spec">
+        <h3>TOP SPEED</h3>
+        <p>250 km/h (electronically limited)</p>
+    </div>
+
+    <div class="spec">
+        <h3>TRANSMISSION</h3>
+        <p>9G-TRONIC Automatic</p>
+    </div>
+
+    <div class="spec">
+        <h3>DRIVETRAIN</h3>
+        <p>All-Wheel Drive (4MATIC)</p>
+    </div>
+
+    <div class="spec">
+        <h3>SUSPENSION</h3>
+        <p>E-Active Body Control</p>
+    </div>
+
+    <div class="spec">
+        <h3>INTERIOR</h3>
+        <p>Nappa Leather & Wood Veneers</p>
+    </div>
+</div>
+
 </section>
 
 <script>
 function setLang(lang) {
-    localStorage.setItem('lang', lang);
     document.querySelectorAll('[data-lang]').forEach(el => {
-        el.classList.toggle('active', el.dataset.lang === lang);
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
     });
+
     document.getElementById('enBtn').classList.toggle('active', lang === 'en');
     document.getElementById('ptBtn').classList.toggle('active', lang === 'pt');
+
+    localStorage.setItem('lang', lang);
 }
+
 setLang(localStorage.getItem('lang') || 'en');
 </script>
 
